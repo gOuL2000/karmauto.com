@@ -1,0 +1,20 @@
+=== آپلود دستی به GitHub ===
+
+1) اجرا کن: prepare-upload.bat
+   (پوشه karmauto-upload ساخته می‌شود، بدون node_modules و .next)
+
+2) برو به: https://github.com/gOuL2000/karmauto.com
+
+3) اگر ریپو خالیه:
+   - روی "Add file" کلیک کن
+   - "Upload files" را بزن
+   - محتویات پوشه karmauto-upload را (همه فایل‌ها و پوشه‌ها) بکش و اینجا رها کن
+   - پایین صفحه "Commit changes" را بزن
+
+4) اگر قبلاً README داری:
+   - داخل ریپو برو، دوباره "Add file" -> "Upload files"
+   - فایل‌ها و پوشه‌ها را بکش و رها کن و Commit کن
+
+بعد از آپلود، روی کامپیوترت برای نصب وابستگی‌ها:
+   cd E:\Brun2
+   npm install

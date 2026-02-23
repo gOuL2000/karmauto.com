@@ -27,6 +27,9 @@ Thumbs.db
 .vscode/
 *.zip
 
+# Upload temp
+karmauto-upload/
+
 # Large/binary (optional - remove if you need them in repo)
 *.zip
 *.mp4
