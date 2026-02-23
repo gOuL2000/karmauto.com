@@ -1,0 +1,329 @@
+/* Admin Panel Specific Styles - Fix Horizontal Overflow */
+
+/* CRITICAL: Force prevent horizontal overflow for admin panel */
+body.admin-panel-active,
+html.admin-panel-active {
+  overflow-x: hidden !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  position: relative !important;
+}
+
+/* Ensure admin layout doesn't overflow */
+.admin-layout-container,
+[class*="admin"] {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+  position: relative;
+}
+
+/* Fix for admin main content */
+.admin-main-content,
+main {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+/* Fix for all containers in admin */
+body.admin-panel-active > *,
+html.admin-panel-active > * {
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+/* Fix for tables and wide content */
+.admin-table-container,
+.table-container,
+[class*="table"] {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+.admin-table-container table,
+table {
+  min-width: 100%;
+  width: max-content;
+  max-width: 100% !important;
+}
+
+/* Fix for cards and containers */
+.admin-card,
+.card,
+[class*="Card"] {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+/* Admin login page: card must NOT be full width - keep standard form width */
+.admin-login-page .admin-login-card,
+.admin-login-card {
+  width: 100% !important;
+  max-width: 28rem !important; /* 448px - standard form width */
+}
+
+/* Fix for forms */
+.admin-form,
+form {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+.admin-form *,
+form * {
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Fix for flex containers */
+.admin-flex-container,
+.flex,
+[class*="flex"] {
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+  min-width: 0 !important;
+}
+
+/* Fix for grid containers */
+.admin-grid-container,
+.grid,
+[class*="grid"] {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+/* Ensure all inputs and textareas don't overflow */
+input,
+textarea,
+select,
+button {
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Fix for images */
+img {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+/* Fix for RTL direction */
+[dir="rtl"] {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+[dir="rtl"] * {
+  max-width: 100% !important;
+}
+
+/* Force all divs to respect max-width */
+body.admin-panel-active div,
+html.admin-panel-active div {
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Fix for specific admin components */
+.admin-sidebar,
+[class*="sidebar"] {
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+.admin-header,
+[class*="header"] {
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+/* Prevent any element from exceeding viewport */
+body.admin-panel-active * {
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Exception for tables - allow horizontal scroll */
+body.admin-panel-active table {
+  max-width: none !important;
+}
+
+body.admin-panel-active .table-container,
+body.admin-panel-active [class*="table-container"] {
+  overflow-x: auto !important;
+  max-width: 100% !important;
+}
+
+/* Fix for all modals, dialogs, popovers, and sheets */
+[data-radix-portal],
+[data-radix-dialog-content],
+[data-radix-sheet-content],
+[data-radix-popover-content] {
+  max-width: calc(100vw - 2rem) !important;
+  max-height: 90vh !important;
+  overflow-x: hidden !important;
+  box-sizing: border-box !important;
+}
+
+/* Fix for Dialog Content */
+[data-radix-dialog-content] {
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  position: fixed !important;
+}
+
+/* Admin: center dialog in viewport with inset+margin (works in RTL, no transform) and keep inside page */
+body.admin-panel-active [data-radix-dialog-content] {
+  left: 0 !important;
+  right: 0 !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  margin: auto !important;
+  transform: none !important;
+  position: fixed !important;
+  width: calc(100vw - 2rem) !important;
+  max-width: 48rem !important;
+  height: fit-content !important;
+  max-height: 90vh !important;
+  min-height: 0 !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  z-index: 9999 !important;
+  box-sizing: border-box !important;
+}
+
+/* Admin: account dialog – content wrapper must not stretch (inner panel keeps fixed max width) */
+body.admin-panel-active .admin-account-dialog-panel {
+  width: min(420px, calc(100vw - 2rem)) !important;
+  max-width: min(420px, calc(100vw - 2rem)) !important;
+  box-sizing: border-box !important;
+}
+
+/* Admin: dialog overlay – full viewport, behind content */
+body.admin-panel-active [data-radix-dialog-overlay] {
+  position: fixed !important;
+  left: 0 !important;
+  right: 0 !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  inset: 0 !important;
+  z-index: 9998 !important;
+  max-width: 100vw !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  overflow: hidden !important;
+}
+
+/* Fix for Sheet Content in RTL */
+[dir="rtl"] [data-radix-sheet-content][data-side="right"] {
+  right: auto !important;
+  left: 0 !important;
+}
+
+[dir="rtl"] [data-radix-sheet-content][data-side="left"] {
+  left: auto !important;
+  right: 0 !important;
+}
+
+/* Ensure all portal content respects viewport (dialog content has its own rule above) */
+[data-radix-portal] > [data-radix-dialog-overlay],
+[data-radix-portal] > [data-radix-sheet-overlay] {
+  max-width: 100vw !important;
+}
+[data-radix-portal] > *:not([data-radix-dialog-content]):not([data-radix-sheet-content]) {
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+/* Fix for Dialog Overlay */
+[data-radix-dialog-overlay],
+[data-radix-sheet-overlay] {
+  position: fixed !important;
+  inset: 0 !important;
+  max-width: 100vw !important;
+  overflow: hidden !important;
+}
+
+/* Fix for Toast Viewport */
+[data-radix-toast-viewport] {
+  max-width: min(420px, calc(100vw - 2rem)) !important;
+  overflow-x: hidden !important;
+}
+
+/* Fix for Toast */
+[data-radix-toast-root] {
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+/* Fix for Notification Center */
+.notification-center,
+[class*="notification"] {
+  max-width: calc(100vw - 2rem) !important;
+  overflow-x: hidden !important;
+}
+
+/* Ensure all fixed positioned elements respect viewport */
+[style*="position: fixed"],
+[class*="fixed"] {
+  max-width: 100vw !important;
+  box-sizing: border-box !important;
+}
+
+/* ========== Admin Mobile Responsive ========== */
+@media (max-width: 1023px) {
+  body.admin-panel-active main {
+    padding: 0.75rem !important; /* p-3 */
+  }
+  body.admin-panel-active .card,
+  body.admin-panel-active [class*="Card"] {
+    border-radius: 0.5rem;
+  }
+  body.admin-panel-active [class*="CardHeader"],
+  body.admin-panel-active [class*="card-header"] {
+    padding: 0.75rem 1rem !important;
+  }
+  body.admin-panel-active [class*="CardContent"],
+  body.admin-panel-active [class*="card-content"] {
+    padding: 0.75rem 1rem !important;
+  }
+  body.admin-panel-active table {
+    font-size: 0.8125rem;
+  }
+  body.admin-panel-active th,
+  body.admin-panel-active td {
+    padding: 0.5rem 0.375rem !important;
+    white-space: nowrap;
+  }
+  body.admin-panel-active .space-y-6 {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 639px) {
+  body.admin-panel-active main {
+    padding: 0.5rem !important; /* p-2 */
+  }
+  body.admin-panel-active [class*="CardHeader"],
+  body.admin-panel-active [class*="card-header"] {
+    padding: 0.5rem 0.75rem !important;
+  }
+  body.admin-panel-active [class*="CardContent"],
+  body.admin-panel-active [class*="card-content"] {
+    padding: 0.5rem 0.75rem !important;
+  }
+  body.admin-panel-active table {
+    font-size: 0.75rem;
+  }
+  body.admin-panel-active th,
+  body.admin-panel-active td {
+    padding: 0.375rem 0.25rem !important;
+  }
+}
